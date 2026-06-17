@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+nav.Sidebar {
+    width: 63px;
+    height: 100vh;
+    background-color: #fff5df50;
+    padding: 10px 12px;
+    box-shadow: 1px 0 1px #c6c6c6;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+}
+
+nav.Sidebar.Expand {
+    width: 230px;
+}
+
+/* Toggle button */
+.toggle {
+    position: absolute;
+    top: 40px;
+    right: -12px;
+    height: 25px;
+    width: 25px;
+    background: #cf8217;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+nav.Sidebar.Expand .toggle {
+    transform: rotate(180deg);
+}
+
+/* Title */
+.Title-Expand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 8px;
+    margin-bottom: 30px;
+    cursor: default;
+}
+
+nav.Sidebar.Expand .Title-Expand {
+    justify-content: flex-start;
+    padding-left: 4px;
+}
+
+.Title-Expand>i {
+    color: #cf8217;
+    font-size: 28px;
+}
+
+.Title-Expand>span {
+    font-family: 'Crimson Pro', serif;
+    color: #cf8217;
+    font-size: 26px;
+    line-height: 1;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul.main-menu {
+    flex: 1;
+}
+
+ul li.item-bar {
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    margin-bottom: 5px;
+}
+
+ul li.item-bar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+ul li.item-bar a:hover {
+    color: #ffffff;
+}
+
+ul li.item-bar a .txt-link {
+    margin-left: 12px;
+}
+
+ul li.item-bar a .icon>i {
+    font-size: 20px;
+    color: #080808;
+    transition: color 0.15s ease;
+    display: flex;
+}
+
+ul li.item-bar:hover {
+    background: #cf8217;
+}
+
+ul li.item-bar:hover a,
+ul li.item-bar:hover a .icon>i {
+    color: #ffffff;
+}
+
+ul li.ativo {
+    background-color: #cf8217;
+    border-radius: 6px;
+}
+
+/* Link text — hidden when collapsed */
+ul li.item-bar a .txt-link,
+.txt {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, max-width 0.25s ease;
+    pointer-events: none;
+    margin-left: 0;
+}
+
+nav.Sidebar.Expand ul li.item-bar a .txt-link,
+.txt {
+    opacity: 1;
+    max-width: 160px;
+    pointer-events: auto;
+    margin-left: 8px;
+}
+
+ul li.ativo a,
+ul li.ativo a .icon>i {
+    color: #ffffff;
+}
+
+ul.bottom-menu {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #c6c6c6;
+}
+/* === LAYOUT MAIN === */
+main {
+    margin-left: 63px;
+    height: 100vh;
+    transition: margin-left 0.2s;
+}
+nav.Sidebar.Expand + main,
+body:has(nav.Sidebar.Expand) main {
+    margin-left: 230px;
+}
+/*=== Selection ===*/
+.conteiner {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* === CSS-ONLY SECTION SWITCHING via :target === */
+section {
+    display: none;
+    height: 100%;
+    padding: 40px;
+    background: #fcf3da;
+    font-family: 'Crimson Pro', serif;
+}
+
+/* Mostra a section alvo */
+section:target {
+    display: block;
+}
+
+/* Mostra Dashboard por padrão se nenhuma section está targetada */
+.conteiner:not(:has(:target)) #A-Dashboard {
+    display: block;
+}
+
+/* Item ativo — CSS puro via :target */
+li.item-bar a[href="#A-Dashboard"],
+li.item-bar a[href="#B-Stories"],
+li.item-bar a[href="#C-Characters"],
+li.item-bar a[href="#D-Objects"],
+li.item-bar a[href="#Settings"] {
+    /* base sem ativo */
+}
+
+#A-Dashboard:target~* .nav-link-dashboard,
+#B-Stories:target~* .nav-link-stories,
+#C-Characters:target~* .nav-link-characters,
+#D-Objects:target~* .nav-link-objects,
+#Settings:target~* .nav-link-settings {
+    /* :target não consegue voltar ao header — limitação do CSS puro */
+    /* Use a versão JS para highlight do item ativo */
+}
