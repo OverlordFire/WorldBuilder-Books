@@ -52,21 +52,24 @@ def register():
 def login():
     data = request.json
         if not data or not data.get("email") or not data.get("password"):
-        return jsonify({"success": False, "message": "E-mail e senha são obrigatórios"})
-    conn = get_db()
+            return jsonify({
+            "success": False,
+            "message": "E-mail e senha são obrigatórios"
+        })
+        conn = get_db()
     try:
         user = conn.execute(
             "SELECT * FROM Users WHERE email = ?",
             (data["email"],)
         ).fetchone()
-        print("Usuário salvo!")
-        return jsonify({
+
+        if user and check_password_hash(user["password"], data["password"]):
+            return jsonify({
                 "success": True,
                 "user_id": user["id"],
                 "username": user["username"],
                 "email": user["email"]
             })
-
         return jsonify({"success": False, "message": "E-mail ou senha inválidos"})
     finally:
         conn.close()
