@@ -73,8 +73,9 @@ section:target {
     gap: 8px;
     background: #ffffff;
     border: 1px solid #e0d5b8;
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 4px;
+    padding: 8px 10px ;
+    
 }
 .section-search i {
     color: #999;
@@ -92,6 +93,10 @@ section:target {
 }
 .section-search input::placeholder {
     color: #bbb;
+}
+.divider {
+    border-top: 1px solid #c6c6c6;
+    margin: 0 -14px;
 }
 /* ===== LISTA DE ITEMS ===== */
 .section-list {
