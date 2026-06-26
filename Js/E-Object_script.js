@@ -33,7 +33,7 @@ async function openObjectView(view, itemId, userId) {
   let obj_type = "", type_custom = "", element = "", element_custom = "",
       rarity = "", status = "", description = "";
   try {
-    const res  = await fetch(`/get-item?section=Objects&id=${itemId}&user_id=${userId}`);
+    const res  = await fetch(`https://worldbuilder-b.onrender.com/get-item?section=Objects&id=${itemId}&user_id=${userId}`);
     const data = await res.json();
     if (data.success) {
       description = data.item.description || "";
@@ -169,7 +169,7 @@ async function openObjectView(view, itemId, userId) {
     statusEl.textContent = "Salvando...";
     statusEl.className   = "obj-save-status";
     try {
-      const res  = await fetch("/update-object", {
+      const res  = await fetch("https://worldbuilder-b.onrender.com/update-object", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
