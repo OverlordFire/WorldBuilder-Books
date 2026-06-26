@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+    margin-bottom: 15px;
 }
 .obj-attr-field {
     display: flex;
@@ -88,6 +89,7 @@
     transition: border-color 0.15s, box-shadow 0.15s;
     box-sizing: border-box;
     background: #fff;
+    margin-bottom: 10px;
 }
 .obj-attr-textarea:focus {
     outline: none;
