@@ -1,14 +1,15 @@
-    <!-- Modal: criar novo item -->
-    <div id="create-modal" class="modal-overlay">
+    <!-- Modal unificado -->
+    <div id="shared-modal" class="modal-overlay">
       <div class="modal-box">
-        <h3 class="modal-title">New Item</h3>
+        <h3 id="shared-modal-title" class="modal-title">Edit Name</h3>
         <div class="modal-group">
           <label>Name</label>
-          <input type="text" id="modal-name-input" placeholder="Enter a name...">
+          <input type="text" id="shared-modal-input" placeholder="Enter a name..." autocomplete="off">
         </div>
+        <p id="shared-modal-error" class="modal-error"></p>
         <div class="modal-actions">
-          <button id="modal-cancel" class="modal-btn-cancel">Cancel</button>
-          <button id="modal-confirm" class="modal-btn-confirm">Create</button>
+          <button id="shared-modal-cancel" class="modal-btn-cancel">Cancel</button>
+          <button id="shared-modal-confirm" class="modal-btn-confirm">Confirm</button>
         </div>
       </div>
     </div>

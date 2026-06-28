@@ -1,341 +1,389 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <title>WorldBuilder</title>
-    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="Css/style.css" rel="stylesheet"/>
-    <link href="Css/sections.css" rel="stylesheet"/>
-    <link href="Css/frame.css" rel="stylesheet"/>
-    <link href="Css/dashboard.css" rel="stylesheet"/>
-    <link href="Css/C-Character.css" rel="stylesheet"/>
-    <link href="Css/E-Object.css" rel="stylesheet"/>
-  </head>
-  <body>
-    <header>
-      <nav class="Sidebar Expand">
-        <div class="Title-Expand">
-          <i class="bi bi-book"></i>
-          <span class="txt">WorldBuilder</span>
-        </div>
-        <i class="bx bx-chevron-right toggle" id="btn-exp"></i>
-        <ul class="main-menu">
-          <li class="item-bar">
-            <a href="#A-Dashboard">
-              <span class="icon"><i class="bi bi-house"></i></span>
-              <span class="txt-link">Dashboard</span>
-            </a>
-          </li>
-          <li class="item-bar">
-            <a href="#B-Stories">
-              <span class="icon"><i class="bi bi-feather"></i></span>
-              <span class="txt-link">Stories</span>
-            </a>
-          </li>
-          <li class="item-bar">
-            <a href="#C-Characters">
-              <span class="icon"><i class="bi bi-person"></i></span>
-              <span class="txt-link">Characters</span>
-            </a>
-          </li>
-          <li class="item-bar">
-            <a href="#D-Locations">
-              <span class="icon"><i class="bx bx-map"></i></span>
-              <span class="txt-link">Locations</span>
-            </a>
-          </li>
-          <li class="item-bar">
-            <a href="#E-Objects">
-              <span class="icon"><i class="bi bi-box-seam"></i></span>
-              <span class="txt-link">Objects</span>
-            </a>
-          </li>
-        </ul>
 
-        <ul class="bottom-menu">
-          <li class="item-bar">
-            <a href="#Account">
-              <span class="icon"><i class="bi bi-person-circle"></i></span>
-              <span class="txt-link">Profile</span>
-            </a>
-          </li>
-          <li class="item-bar">
-            <a href="#Settings">
-              <span class="icon"><i class="bi bi-gear"></i></span>
-              <span class="txt-link">Settings</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="conteiner">
-        <!-- ===== DASHBOARD ===== -->
-        <section id="A-Dashboard">
-          <div class="dashboard-wrapper">
-            <div class="dash-header">
-              <div class="dash-welcome">
-                <p class="dash-greeting">Bem-vindo de volta,</p>
-                <h1 class="dash-username" id="dash-username">Usuário</h1>
-                <p class="dash-subtitle">Seu universo criativo está esperando.</p>
-              </div>
+<head>
+  <meta charset="UTF-8">
+  <title>WorldBuilder</title>
+  <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="Css/style.css" rel="stylesheet" />
+  <link href="Css/sections.css" rel="stylesheet" />
+  <link href="Css/frame.css" rel="stylesheet" />
+  <link href="Css/section/dashboard.css" rel="stylesheet" />
+  <link href="Css/section/B-Story.css" rel="stylesheet" />
+  <link href="Css/section/C-Character.css" rel="stylesheet" />
+  <link href="Css/section/D-Location.css" rel="stylesheet" />
+  <link href="Css/section/E-Object.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav class="Sidebar Expand">
+      <div class="Title-Expand">
+        <i class="bi bi-book"></i>
+        <span class="txt">WorldBuilder</span>
+      </div>
+      <i class="bx bx-chevron-right toggle" id="btn-exp"></i>
+      <ul class="main-menu">
+        <li class="item-bar">
+          <a href="#A-Dashboard">
+            <span class="icon"><i class="bi bi-house"></i></span>
+            <span class="txt-link">Dashboard</span>
+          </a>
+        </li>
+        <li class="item-bar">
+          <a href="#B-Stories">
+            <span class="icon"><i class="bi bi-feather"></i></span>
+            <span class="txt-link">Stories</span>
+          </a>
+        </li>
+        <li class="item-bar">
+          <a href="#C-Characters">
+            <span class="icon"><i class="bi bi-person"></i></span>
+            <span class="txt-link">Characters</span>
+          </a>
+        </li>
+        <li class="item-bar">
+          <a href="#D-Locations">
+            <span class="icon"><i class="bx bx-map"></i></span>
+            <span class="txt-link">Locations</span>
+          </a>
+        </li>
+        <li class="item-bar">
+          <a href="#E-Objects">
+            <span class="icon"><i class="bi bi-box-seam"></i></span>
+            <span class="txt-link">Objects</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="bottom-menu">
+        <li class="item-bar">
+          <a href="#Account">
+            <span class="icon"><i class="bi bi-person-circle"></i></span>
+            <span class="txt-link">Profile</span>
+          </a>
+        </li>
+        <li class="item-bar">
+          <a href="#Settings">
+            <span class="icon"><i class="bi bi-gear"></i></span>
+            <span class="txt-link">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="conteiner">
+      <!-- ===== DASHBOARD ===== -->
+      <section id="A-Dashboard">
+        <div class="dashboard-wrapper">
+          <!-- Header -->
+          <div class="dash-header">
+            <div class="dash-welcome">
+              <h1 class="dash-title">Seu Mundo</h1>
+              <p class="dash-subtitle">Bem-vindo ao seu universo. Gerencie entidades, acompanhe o progresso
+                e<br>continue escrevendo sua história.</p>
             </div>
-
-            <p class="dash-section-label">Visão Geral</p>
-            <div class="dash-stats">
-              <a class="dash-stat-card" href="#B-Stories">
-                <div class="dash-stat-icon dash-icon-story"><i class="bi bi-feather"></i></div>
+            <div class="dash-actions">
+              <button class="dash-btn-primary" id="dash-btn-new-story">
+                <i class="bi bi-book"></i> Criar Nova História
+              </button>
+              <button class="dash-btn-secondary" id="dash-btn-new-char">
+                <span>+</span> Criar Personagem
+              </button>
+            </div>
+          </div>
+          <!-- Stats row -->
+          <div class="dash-stats">
+            <div class="dash-stat-card" data-nav="#B-Stories">
                 <div class="dash-stat-body">
+                  <span class="dash-stat-label">HISTÓRIAS</span>
                   <span class="dash-stat-count" id="dash-count-stories">0</span>
-                  <span class="dash-stat-label">Stories</span>
                 </div>
-                <i class="bi bi-chevron-right dash-stat-arrow"></i>
-              </a>
-              <a class="dash-stat-card" href="#C-Characters">
-                <div class="dash-stat-icon dash-icon-char"><i class="bi bi-person-fill"></i></div>
-                <div class="dash-stat-body">
-                  <span class="dash-stat-count" id="dash-count-characters">0</span>
-                  <span class="dash-stat-label">Characters</span>
-                </div>
-                <i class="bi bi-chevron-right dash-stat-arrow"></i>
-              </a>
-              <a class="dash-stat-card" href="#D-Locations">
-                <div class="dash-stat-icon dash-icon-loc"><i class="bi bi-geo-alt-fill"></i></div>
-                <div class="dash-stat-body">
-                  <span class="dash-stat-count" id="dash-count-locations">0</span>
-                  <span class="dash-stat-label">Locations</span>
-                </div>
-                <i class="bi bi-chevron-right dash-stat-arrow"></i>
-              </a>
-              <a class="dash-stat-card" href="#E-Objects">
-                <div class="dash-stat-icon dash-icon-obj"><i class="bi bi-box-fill"></i></div>
-                <div class="dash-stat-body">
-                  <span class="dash-stat-count" id="dash-count-objects">0</span>
-                  <span class="dash-stat-label">Objects</span>
-                </div>
-                <i class="bi bi-chevron-right dash-stat-arrow"></i>
-              </a>
-            </div>
-
-            <p class="dash-section-label">Criados Recentemente</p>
-            <div class="dash-recent" id="dash-recent">
-              <p class="dash-empty">Nenhum item criado ainda.</p>
-            </div>
-          </div>
-        </section>
-        <section id="B-Stories">
-          <div class="section-panel">
-            <div class="section-tab">
-              <h2>Stories</h2>
-              <button class="btn-add" data-section="Stories" title="New Story">+</button>
-            </div>
-            <div class="section-search">
-              <i class="bi bi-search"></i>
-              <input type="text" placeholder="Search Story..." autocomplete="off">
-            </div>
-            <div class="divider"></div>
-            <div class="section-list">
-
-            </div>
-          </div>
-          
-          <div class="section-content">
-            <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
-          </div>
-        </section>
-        <section id="C-Characters">
-          <div class="section-panel">
-            <div class="section-tab">
-              <h2>Characters</h2>
-              <button class="btn-add" data-section="Characters" title="New Character">+</button>
-            </div>
-            <div class="section-search">
-              <i class="bi bi-search"></i>
-              <input type="text" placeholder="Search Character..." autocomplete="off">
-            </div>
-            <div class="divider"></div>
-            <div class="section-list">
-
-            </div>
-          </div>
-          <div class="section-content">
-            <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
-          </div>
-        </section>
-        <section id="D-Locations">
-          <div class="section-panel">
-            <div class="section-tab">
-              <h2>Locations</h2>
-              <button class="btn-add" data-section="Locations" title="New Location">+</button>
-            </div>
-            <div class="section-search">
-              <i class="bi bi-search"></i>
-              <input type="text" placeholder="Search Location..." autocomplete="off">
-            </div>
-            <div class="divider"></div>
-            <div class="section-list">
-              
-            </div>
-          </div>
-          <div class="section-content">
-            <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
-          </div>
-        </section>
-        <section id="E-Objects">
-          <div class="section-panel">
-            <div class="section-tab">
-              <h2>Objects</h2>
-              <button class="btn-add" data-section="Objects" title="New Object">+</button>
-            </div>
-            <div class="section-search">
-              <i class="bi bi-search"></i>
-              <input type="text" placeholder="Search Object..." autocomplete="off">
-            </div>
-            <div class="divider"></div>
-            <div class="section-list">
-              
-            </div>
-          </div>
-          <div class="section-content">
-            <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
-          </div>
-        </section>
-
-        <section id="Account">
-          <div class="account-wrapper">
-
-            <!-- Header do perfil -->
-            <div class="account-header">
-              <div class="account-avatar">
-                <i class="bi bi-person-fill"></i>
+                <div class="dash-stat-icon dash-icon-story"><i class="bi bi-feather"></i></div>
               </div>
-              <div class="account-header-info">
-                <span class="account-name">Username</span>
-                <span class="account-email">user@email.com</span>
+              <div class="dash-stat-card" data-nav="#C-Characters">
+              <div class="dash-stat-body">
+                <span class="dash-stat-label">PERSONAGENS</span>
+                <span class="dash-stat-count" id="dash-count-characters">0</span>
+              </div>
+              <div class="dash-stat-icon dash-icon-char"><i class="bi bi-people-fill"></i></div>
+            </div>
+            <div class="dash-stat-card" data-nav="#D-Locations">
+              <div class="dash-stat-body">
+                <span class="dash-stat-label">LOCALIZAÇÕES</span>
+                <span class="dash-stat-count" id="dash-count-locations">0</span>
+              </div>
+              <div class="dash-stat-icon dash-icon-loc"><i class="bi bi-map"></i></div>
+            </div>
+            <div class="dash-stat-card" data-nav="#E-Objects">
+              <div class="dash-stat-body">
+                <span class="dash-stat-label">OBJETOS</span>
+                <span class="dash-stat-count" id="dash-count-objects">0</span>
+              </div>
+              <div class="dash-stat-icon dash-icon-obj"><i class="bi bi-box-seam-fill"></i></div>
+            </div>
+          </div>
+          <!-- Bottom two-column -->
+          <div class="dash-bottom">
+            <!-- Left: Recent Stories -->
+            <div class="dash-left-col">
+              <div class="dash-col-header">
+                <h2 class="dash-col-title">Histórias Recentes</h2>
+                <a class="dash-see-all" href="#B-Stories">Ver todas</a>
+              </div>
+              <div class="dash-stories-list" id="dash-stories-list">
+                <div class="dash-empty-state">
+                    <div class="dash-empty-state-icon"><i class="bi bi-feather"></i></div>
+                    <p>Nenhuma história criada ainda.</p>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Right: Universe Summary -->
+            <div class="dash-right-col">
+              <h2 class="dash-col-title">Resumo do Universo</h2>
+              <div class="dash-summary">
+                <div class="dash-summary-row">
+                  <div class="dash-summary-icon dash-icon-char"><i class="bi bi-people-fill"></i></div>
+                  <span class="dash-summary-label">Personagens</span>
+                  <span class="dash-summary-count" id="dash-sum-chars">0</span>
+                </div>
+                <div class="dash-summary-row">
+                  <div class="dash-summary-icon dash-icon-loc"><i class="bi bi-map"></i></div>
+                  <span class="dash-summary-label">Localizações</span>
+                  <span class="dash-summary-count" id="dash-sum-locs">0</span>
+                </div>
+                <div class="dash-summary-row">
+                  <div class="dash-summary-icon dash-icon-story"><i class="bi bi-feather"></i></div>
+                  <span class="dash-summary-label">Histórias</span>
+                  <span class="dash-summary-count" id="dash-sum-stories">0</span>
+                </div>
+                <div class="dash-summary-row">
+                  <div class="dash-summary-icon dash-icon-obj"><i class="bi bi-box-seam-fill"></i></div>
+                  <span class="dash-summary-label">Objetos</span>
+                  <span class="dash-summary-count" id="dash-sum-objs">0</span>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-        <section id="Settings">
-          <h1>Settings</h1>
-        </section>
-      </div>
-    </main>
-    <footer>
+        </div>
+      </section>
+      <section id="B-Stories">
+        <div class="section-panel">
+          <div class="section-tab">
+            <h2>Stories</h2>
+            <button class="btn-add" data-section="Stories" title="New Story">+</button>
+          </div>
+          <div class="section-search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search Story..." autocomplete="off">
+          </div>
+          <div class="divider"></div>
+          <div class="section-list">
 
-    </footer>
-        <!-- Modal: criar novo item -->
-    <div id="create-modal" class="modal-overlay">
-      <div class="modal-box">
-        <h3 class="modal-title">New Item</h3>
-        <div class="modal-group">
-          <label>Name</label>
-          <input type="text" id="modal-name-input" placeholder="Enter a name..." autocomplete="off">
+          </div>
         </div>
-        <div class="modal-actions">
-          <button id="modal-cancel" class="modal-btn-cancel">Cancel</button>
-          <button id="modal-confirm" class="modal-btn-confirm">Create</button>
+
+        <div class="section-content">
+          <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
         </div>
+      </section>
+      <section id="C-Characters">
+        <div class="section-panel">
+          <div class="section-tab">
+            <h2>Characters</h2>
+            <button class="btn-add" data-section="Characters" title="New Character">+</button>
+          </div>
+          <div class="section-search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search Character..." autocomplete="off">
+          </div>
+          <div class="divider"></div>
+          <div class="section-list">
+
+          </div>
+        </div>
+        <div class="section-content">
+          <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
+        </div>
+      </section>
+      <section id="D-Locations">
+        <div class="section-panel">
+          <div class="section-tab">
+            <h2>Locations</h2>
+            <button class="btn-add" data-section="Locations" title="New Location">+</button>
+          </div>
+          <div class="section-search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search Location..." autocomplete="off">
+          </div>
+          <div class="divider"></div>
+          <div class="section-list">
+
+          </div>
+        </div>
+        <div class="section-content">
+          <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
+        </div>
+      </section>
+      <section id="E-Objects">
+        <div class="section-panel">
+          <div class="section-tab">
+            <h2>Objects</h2>
+            <button class="btn-add" data-section="Objects" title="New Object">+</button>
+          </div>
+          <div class="section-search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search Object..." autocomplete="off">
+          </div>
+          <div class="divider"></div>
+          <div class="section-list">
+
+          </div>
+        </div>
+        <div class="section-content">
+          <p class="section-placeholder">Select an existing item or create a new one to begin.</p>
+        </div>
+      </section>
+
+      <section id="Account">
+        <div class="account-wrapper">
+
+          <!-- Header do perfil -->
+          <div class="account-header">
+            <div class="account-avatar">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <div class="account-header-info">
+              <span class="account-name">Username</span>
+              <span class="account-email">user@email.com</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="Settings">
+        <h1>Settings</h1>
+      </section>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+  <!-- Modal unificado -->
+  <div id="shared-modal" class="modal-overlay">
+    <div class="modal-box">
+      <h3 id="shared-modal-title" class="modal-title">Edit Name</h3>
+      <div class="modal-group">
+        <label>Name</label>
+        <input type="text" id="shared-modal-input" placeholder="Enter a name..." autocomplete="off">
+      </div>
+      <p id="shared-modal-error" class="modal-error"></p>
+      <div class="modal-actions">
+        <button id="shared-modal-cancel" class="modal-btn-cancel">Cancel</button>
+        <button id="shared-modal-confirm" class="modal-btn-confirm">Confirm</button>
       </div>
     </div>
-    <!-- Modal: Renomear item -->
-    <div id="rename-modal" class="modal-overlay">
-      <div class="modal-box">
-        <h3 class="modal-title">Editar Name</h3>
-        <div class="modal-group">
-          <label>Name</label>
-          <input type="text" id="rename-input" placeholder="Digite o novo nome..." autocomplete="off">
-        </div>
-        <p id="rename-error" class="modal-error"></p>
-        <div class="modal-actions">
-          <button id="rename-cancel" class="modal-btn-cancel">Cancel</button>
-          <button id="rename-confirm" class="modal-btn-confirm">Confirm</button>
-        </div>
+  </div>
+  <!-- Modal: Confirmar delete -->
+  <div id="delete-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="delete-modal-icon"><i class="bi bi-trash3"></i></div>
+      <p id="delete-modal-message" class="delete-modal-message"></p>
+      <div class="modal-actions">
+        <button id="delete-modal-cancel" class="modal-btn-cancel">Cancel</button>
+        <button id="delete-modal-confirm" class="modal-btn-danger">Deletar</button>
       </div>
     </div>
-      <!-- Modal: Login -->
-    <div id="login-modal" class="modal-overlay open">
-      <form class="modal-box">
-        <button type="button" id="login-close" class="modal-btn-x" aria-label="close">&times;</button>
-        <div class="modal-login-header">
-          <i class="bi bi-book modal-login-icon"></i>
-          <h3 class="modal-title">WorldBuilder</h3>
+  </div>
+  <!-- Modal: Login -->
+  <div id="login-modal" class="modal-overlay open">
+    <form class="modal-box" autocomplete="on">
+      <button type="button" id="login-close" class="modal-btn-x" aria-label="close">&times;</button>
+      <div class="modal-login-header">
+        <i class="bi bi-book modal-login-icon"></i>
+        <h3 class="modal-title">WorldBuilder</h3>
+      </div>
+      <div class="modal-group">
+        <label>E-mail</label>
+        <div class="input-wrap">
+          <input type="email" id="login-email" placeholder="Your@email.com" autocomplete="email">
+          <i class="bi bi-person-fill"></i>
         </div>
-        <div class="modal-group">
-          <label>E-mail</label>
-          <div class="input-wrap">
-            <input type="email" id="login-email" placeholder="Your@email.com">
-            <i class="bi bi-person-fill"></i>
-          </div>
+      </div>
+      <div class="modal-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <input type="password" id="login-password" placeholder="Your password.." autocomplete="current-password">
+          <i class="bi bi-lock-fill"></i>
         </div>
-        <div class="modal-group">
-          <label>Password</label>
-          <div class="input-wrap">
-            <input type="password" id="login-password" placeholder="Your password.." autocomplete="current-password">
-            <i class="bi bi-lock-fill"></i>
-          </div>
+      </div>
+      <p id="login-error" class="modal-error"></p>
+      <div class="modal-remember">
+        <label class="remember-label">
+          <input type="checkbox" id="login-remember">
+          <span>Remember me for 30 days</span>
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" id="login-confirm" class="modal-btn-confirm modal-btn-full">Sign In</button>
+      </div>
+      <hr class="modal-divider">
+      <p class="modal-footer-link">Don't have an account? <a id="go-to-register">Sign Up</a></p>
+    </form>
+  </div>
+  <!-- Modal: Cadastro -->
+  <div id="register-modal" class="modal-overlay">
+    <form class="modal-box" autocomplete="on">
+      <button type="button" id="register-close" class="modal-btn-x" aria-label="close">&times;</button>
+      <h3 class="modal-title">Create Account</h3>
+      <div class="modal-group">
+        <label>Username</label>
+        <div class="input-wrap">
+          <input type="text" id="register-username" placeholder="Choose a username..." autocomplete="username">
+          <i class="bi bi-person-fill"></i>
         </div>
-        <p id="login-error" class="modal-error"></p>
-        <div class="modal-remember">
-          <label class="remember-label">
-            <input type="checkbox" id="login-remember">
-            <span>Remember me for 30 days</span>
-          </label>
+      </div>
+      <div class="modal-group">
+        <label>E-mail</label>
+        <div class="input-wrap">
+          <input type="email" id="register-email" placeholder="your@email.com" autocomplete="email">
+          <i class="bi bi-envelope-fill"></i>
         </div>
-        <div class="modal-actions">
-          <button id="login-confirm" class="modal-btn-confirm modal-btn-full">Sign In</button>
+      </div>
+      <div class="modal-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <input type="password" id="register-password" placeholder="Create a password..." autocomplete="new-password">
+          <i class="bi bi-lock-fill"></i>
         </div>
-        <hr class="modal-divider">
-        <p class="modal-footer-link">Don't have an account? <a id="go-to-register">Sign Up</a></p>
-      </form>
-    </div>
-      <!-- Modal: Cadastro -->
-    <div id="register-modal" class="modal-overlay">
-      <form class="modal-box">
-        <button type="button" id="login-close" class="modal-btn-x" aria-label="close">&times;</button>
-        <h3 class="modal-title">Create Account</h3>
-        <div class="modal-group">
-          <label>Username</label>
-          <div class="input-wrap">
-            <input type="text" id="register-username" placeholder="Choose a username..." autocomplete="username">
-            <i class="bi bi-person-fill"></i>
-          </div>
+      </div>
+      <div class="modal-group">
+        <label>Confirm Password</label>
+        <div class="input-wrap">
+          <input type="password" id="register-confirm-password" placeholder="Repeat your password..."
+            autocomplete="new-password">
+          <i class="bi bi-shield-lock-fill"></i>
         </div>
-        <div class="modal-group">
-          <label>E-mail</label>
-          <div class="input-wrap">
-            <input type="email" id="register-email" placeholder="your@email.com" autocomplete="email">
-            <i class="bi bi-envelope-fill"></i>
-          </div>
-        </div>
-        <div class="modal-group">
-          <label>Password</label>
-          <div class="input-wrap">
-            <input type="password" id="register-password" placeholder="Create a password..." autocomplete="new-password">
-            <i class="bi bi-lock-fill"></i>
-          </div>
-        </div>
-        <div class="modal-group">
-          <label>Confirm Password</label>
-          <div class="input-wrap">
-            <input type="password" id="register-confirm-password" placeholder="Repeat your password..." autocomplete="new-password">
-            <i class="bi bi-shield-lock-fill"></i>
-          </div>
-        </div>
-        <p id="register-error" class="modal-error"></p>
-        <hr class="modal-divider">
-        <div class="modal-actions">
-          <button id="register-confirm" class="modal-btn-confirm modal-btn-full">Sign Up</button>
-        </div>
-        <p class="modal-footer-link">Already have an account? <a id="go-to-login">Sign In</a></p>
-      </form>
-    </div>
-    
-    <script src="Js/navbar_script.js"></script>
-    <script src="Js/sections_script.js"></script>
-    <script src="Js/C-Charcter_script.js"></script>
-    <script src="Js/E-Object_script.js"></script>
-    <script src="Js/auth_script.js"></script>
-  </body>
+      </div>
+      <p id="register-error" class="modal-error"></p>
+      <hr class="modal-divider">
+      <div class="modal-actions">
+        <button type="submit" id="register-confirm" class="modal-btn-confirm modal-btn-full">Sign Up</button>
+      </div>
+      <p class="modal-footer-link">Already have an account? <a id="go-to-login">Sign In</a></p>
+    </form>
+  </div>
+
+  <script src="Js/navbar_script.js"></script>
+  <script src="Js/sections_script.js"></script>
+  <script src="Js/section/dashboard.js"></script>
+  <script src="Js/section/B-Story_script.js"></script>
+  <script src="Js/section/C-Charcter_script.js"></script>
+  <script src="Js/section/D-Location_script.js"></script>
+  <script src="Js/section/E-Object_script.js"></script>
+  <script src="Js/auth_script.js"></script>
+</body>
+
 </html>

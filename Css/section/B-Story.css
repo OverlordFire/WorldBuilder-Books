@@ -1,0 +1,433 @@
+/* ===== STORY ATTRIBUTES PANEL ===== */
+.story-attrs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+.story-attrs-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.story-attrs-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #725c3b;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #e0d5b8;
+    width: 100%;
+}
+.story-attrs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 15px;
+}
+.story-attr-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.story-attr-field label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #9a7d50;
+}
+.story-attr-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23cf8217' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+    border: 1.5px solid #e0d5b8;
+    border-radius: 4px;
+    padding: 9px 34px 9px 12px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: #2a1f0e;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+}
+.story-attr-select:focus {
+    outline: none;
+    border-color: #cf8217;
+    box-shadow: 0 0 0 3px #cf821718;
+}
+.story-attr-select option[value=""] {
+    color: #bbb;
+}
+.story-attr-textarea {
+    border: 1.5px solid #e0d5b8;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: #2a1f0e;
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.story-attr-textarea:focus {
+    outline: none;
+    border-color: #cf8217;
+    box-shadow: 0 0 0 3px #cf821718;
+}
+.story-attr-textarea::placeholder {
+    color: #bbb;
+}
+.story-save-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+}
+.story-save-btn {
+    background: #cf8217;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+.story-save-btn:hover {
+    background: #b37428;
+    box-shadow: 0 2px 8px #cf821730;
+}
+.story-save-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+.story-save-status {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #9a7d50;
+    transition: opacity 0.3s;
+}
+.story-save-status.saved { color: #5a9a50; }
+.story-save-status.error { color: #c0392b; }
+
+/* --- Volumes & Chapters tree --- */
+.story-volumes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #e0d5b8;
+}
+.story-volumes-header .story-attrs-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    width: auto;
+}
+.story-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: 1px solid #d8cdb5;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #7a6040;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+.story-add-btn:hover {
+    border-color: #cf8217;
+    color: #cf8217;
+    background: #fdf8f0;
+}
+.story-volumes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.story-volume-block {
+    background: #fff;
+    border: 1px solid #e8dfc8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.story-volume-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    background: #fdf8f0;
+    border-bottom: 1px solid #e8dfc8;
+    cursor: pointer;
+    user-select: none;
+}
+.story-volume-chevron {
+    font-size: 13px;
+    color: #b09060;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+.story-volume-block.collapsed .story-volume-chevron {
+    transform: rotate(-90deg);
+}
+.story-volume-block.collapsed .story-chapters-list {
+    display: none;
+}
+.story-volume-name {
+    font-family: 'Crimson Pro', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #2a1f0e;
+    flex: 1;
+}
+.story-volume-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+.story-volume-header:hover .story-volume-actions {
+    opacity: 1;
+}
+.story-icon-btn {
+    background: none;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+    color: #b09060;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.12s, color 0.12s;
+    display: flex;
+    align-items: center;
+}
+.story-icon-btn:hover { background: #f0e8d0; color: #2a1f0e; }
+.story-icon-btn.delete:hover { background: #fdecea; color: #c0392b; }
+
+.story-chapters-list {
+    display: flex;
+    flex-direction: column;
+}
+.story-chapter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px 9px 28px;
+    border-bottom: 1px solid #f0e8d0;
+    cursor: pointer;
+    transition: background 0.12s;
+}
+.story-chapter-row:last-child { border-bottom: none; }
+.story-chapter-row:hover { background: #fdf8f0; }
+.story-chapter-icon {
+    font-size: 13px;
+    color: #c4aa80;
+    flex-shrink: 0;
+}
+.story-chapter-name {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: #2a1f0e;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.story-chapter-actions {
+    display: flex;
+    gap: 2px;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+.story-chapter-row:hover .story-chapter-actions { opacity: 1; }
+
+.story-add-chapter-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px 8px 28px;
+    color: #cf8217;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.12s;
+    border-top: 1px dashed #e8dfc8;
+}
+.story-add-chapter-row:hover { background: #fdf8f0; }
+
+/* ===== CHAPTER EDITOR OVERLAY ===== */
+.chapter-editor-overlay {
+    position: fixed;
+    inset: 0;
+    background: #faf7f0;
+    z-index: 5000;
+    display: flex;
+    flex-direction: column;
+    animation: editorIn 0.2s ease;
+}
+@keyframes editorIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.chapter-editor-topbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 32px;
+    background: #fff;
+    border-bottom: 1px solid #e8dfc8;
+    flex-shrink: 0;
+}
+.chapter-editor-back {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #7a6040;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.12s, color 0.12s;
+}
+.chapter-editor-back:hover { background: #f0e8d0; color: #2a1f0e; }
+.chapter-editor-title-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.chapter-editor-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2a1f0e;
+    border: none;
+    background: transparent;
+    outline: none;
+    min-width: 60px;
+    max-width: 400px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.12s;
+}
+.chapter-editor-title:hover,
+.chapter-editor-title:focus { background: #f0e8d0; }
+.chapter-editor-status {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #b09060;
+}
+.chapter-editor-status.saved { color: #27ae60; }
+.chapter-editor-wordcount {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #b09060;
+    padding-left: 16px;
+    border-left: 1px solid #e8dfc8;
+    margin-left: 8px;
+}
+.chapter-editor-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 40px 0;
+}
+.chapter-editor-subtitle-wrap {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto 24px;
+    padding: 0 32px;
+}
+.chapter-editor-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #9a7d50;
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: background 0.12s;
+}
+.chapter-editor-subtitle:hover,
+.chapter-editor-subtitle:focus { background: #f0e8d0; }
+.chapter-editor-divider {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto 24px;
+    padding: 0 32px;
+    border: none;
+    border-top: 1px solid #e8dfc8;
+}
+.chapter-editor-textarea {
+    flex: 1;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: block;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #1e1609;
+    outline: none;
+    min-height: 400px;
+}
+.chapter-editor-textarea::placeholder { color: #c4aa80; }
+.modal-btn-danger {
+    background: #c0392b;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.modal-btn-danger:hover { background: #a93226; }
+.delete-modal-icon {
+    font-size: 28px;
+    color: #c0392b;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.delete-modal-message {
+    text-align: center;
+    color: #5a4020;
+    font-size: 14px;
+    margin: 0 0 4px;
+    line-height: 1.5;
+}

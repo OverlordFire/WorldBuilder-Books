@@ -1,0 +1,140 @@
+/* ===== OBJECT ATTRIBUTES PANEL ===== */
+.obj-attrs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+.obj-attrs-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #725c3b;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #e0d5b8;
+    width: 100%;
+}
+.obj-attrs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 15px;
+}
+.obj-attr-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.obj-attr-field label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #9a7d50;
+}
+.obj-attr-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232980b9' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+    border: 1.5px solid #e0d5b8;
+    border-radius: 4px;
+    padding: 9px 34px 9px 12px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: #2a1f0e;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+}
+.obj-attr-select:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px #2980b918;
+}
+.obj-attr-select option[value=""] {
+    color: #bbb;
+}
+.obj-attr-input {
+    border: 1.5px solid #e0d5b8;
+    border-radius: 4px;
+    padding: 9px 12px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: #2a1f0e;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+}
+.obj-attr-input:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px #2980b918;
+}
+.obj-attr-input::placeholder {
+    color: #bbb;
+}
+.obj-attr-textarea {
+    border: 1.5px solid #e0d5b8;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: #2a1f0e;
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.obj-attr-textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px #2980b918;
+}
+.obj-attr-textarea::placeholder {
+    color: #bbb;
+}
+.obj-save-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+}
+.obj-save-btn {
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+.obj-save-btn:hover {
+    background: #1f6799;
+    box-shadow: 0 2px 8px #2980b930;
+}
+.obj-save-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+.obj-save-status {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #9a7d50;
+    transition: opacity 0.3s;
+}
+.obj-save-status.saved {
+    color: #5a9a50;
+}
+.obj-save-status.error {
+    color: #c0392b;
+}

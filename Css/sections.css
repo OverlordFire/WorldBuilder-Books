@@ -160,10 +160,18 @@ section:target {
     padding: 14px 6px 10px;
     gap: 8px;
     text-align: center;
+    overflow: hidden;
+    min-width: 0;
 }
 .section-list.grid-view .card-info {
     width: 100%;
     align-items: center;
+    overflow: hidden;
+    min-width: 0;
+}
+.section-list.grid-view .card-name {
+    width: 100%;
+    max-width: 100%;
 }
 .section-list.grid-view .card-delete {
     top: 4px;
@@ -193,7 +201,7 @@ section:target {
     height: 76px;
     min-width: 76px;
     background: #f0e8d0;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,6 +209,7 @@ section:target {
     font-size: 20px;
     flex-shrink: 0;
     margin-right: 3px;
+    overflow: hidden;
 }
 .card-thumb.thumb-stories    { background: #fff3e0; color: #cf8217; }
 .card-thumb.thumb-characters { background: #f3e5f5; color: #8e44ad; }
@@ -221,6 +230,7 @@ section:target {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
 }
 .section-card .card-desc {
     font-family: 'Inter', sans-serif;
@@ -230,7 +240,6 @@ section:target {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 /* ===== CARD DELETE BUTTON ===== */
 .card-delete {
     position: absolute;
@@ -305,7 +314,7 @@ section:target {
     align-items: flex-start;
     justify-content: flex-start;
     overflow-y: auto;
-    padding: 40px;
+    padding: 10px 40px 40px;
 }
 .section-content::-webkit-scrollbar {
     width: 4px;
@@ -327,19 +336,19 @@ section:target {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 35px 48px 40px;
-    gap: 32px;
+    padding: 8px 48px 35px;
+    gap: 5px;
 }
 .item-view-header {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 15px;
     width: 100%;
 }
 .item-view-thumb {
-    width: 90px;
-    height: 90px;
-    min-width: 90px;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
     background: #f0e8d0;
     border-radius: 6px;
     display: flex;
@@ -356,7 +365,7 @@ section:target {
 .item-view-name-wrap {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 .item-view-name {
     font-family: 'Crimson Pro', serif;
@@ -382,14 +391,31 @@ section:target {
     background: #cf821720;
     color: #b37428;
 }
+.item-view-dice-btn {
+    background: none;
+    border: none;
+    color: #cf8217;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+}
+.item-view-dice-btn:hover {
+    background: #cf821720;
+    color: #b37428;
+}
 .item-category-title {
     font-family: 'Crimson Pro', serif;
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
     color: #725c3b;
-    padding-bottom: 10px;
-    margin-bottom: 16px;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
     border-bottom: 2px solid #e0d5b8;
     width: 100%;
 }
@@ -445,4 +471,68 @@ section:target {
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     color: #9a7d50;
+}
+/* ===== THUMB UPLOAD ===== */
+.thumb-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.thumb-upload-wrap {
+    position: relative;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.thumb-upload-wrap .item-view-thumb {
+    overflow: hidden;
+    transition: filter 0.2s;
+}
+.thumb-upload-wrap:hover .item-view-thumb {
+    filter: brightness(0.88);
+}
+.thumb-upload-overlay {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.52);
+    border-radius: 25%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.18s;
+    pointer-events: none;
+}
+.thumb-upload-wrap:hover .thumb-upload-overlay {
+    opacity: 1;
+}
+.thumb-upload-wrap.drag-over .item-view-thumb {
+    filter: brightness(0.75);
+    outline: 2px dashed #cf8217;
+    outline-offset: 2px;
+}
+.thumb-upload-wrap.drag-over .thumb-upload-overlay {
+    opacity: 1;
+}
+.thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+.thumb-notice {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #b09a72;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+    max-width: 120px;
 }

@@ -1,11 +1,23 @@
 const menuItems = document.querySelectorAll('.item-bar');
 
-function setActive() {
-    menuItems.forEach(item => item.classList.remove('ativo'));
-    this.classList.add('ativo');
+function setActiveByHash(hash) {
+    const target = hash || '#A-Dashboard';
+    menuItems.forEach(item => {
+        const link = item.querySelector('a');
+        if (link && link.getAttribute('href') === target) {
+            item.classList.add('ativo');
+        } else {
+            item.classList.remove('ativo');
+        }
+    });
 }
+menuItems.forEach(item => item.addEventListener('click', function() {
+    menuItems.forEach(i => i.classList.remove('ativo'));
+    this.classList.add('ativo');
+}));
 
-menuItems.forEach(item => item.addEventListener('click', setActive));
+window.addEventListener('hashchange', () => setActiveByHash(window.location.hash));
+document.addEventListener('DOMContentLoaded', () => setActiveByHash(window.location.hash || '#A-Dashboard'));
 
 const btnExp = document.querySelector('#btn-exp')
 const menuSide = document.querySelector('.Sidebar')
@@ -24,19 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function clearErrors() {
     document.querySelectorAll(".modal-error").forEach(e => e.innerText = "");
   }
-
   goRegister?.addEventListener("click", (e) => {
     e.preventDefault();
     clearErrors();
     loginModal.classList.remove("open");
     registerModal.classList.add("open");
   });
-
   goLogin?.addEventListener("click", (e) => {
     e.preventDefault();
     clearErrors();
     registerModal.classList.remove("open");
     loginModal.classList.add("open");
   });
-
 });

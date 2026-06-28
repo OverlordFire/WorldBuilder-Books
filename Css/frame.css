@@ -62,7 +62,7 @@
 .modal-group select {
     background: #fff;
     border: 1px solid #e0d5b8;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 10px 38px 10px 13px;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
@@ -84,7 +84,7 @@
 .modal-btn-cancel {
     background: none;
     border: 1px solid #e0d5b8;
-    border-radius: 7px;
+    border-radius: 6px;
     padding: 8px 18px;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
@@ -97,7 +97,7 @@
 .modal-btn-confirm {
     background: #cf8217;
     border: none;
-    border-radius: 7px;
+    border-radius: 6px;
     padding: 8px 22px;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
@@ -206,7 +206,7 @@
     color: #9a7d50;
     cursor: pointer;
     padding: 2px 6px;
-    border-radius: 5px;
+    border-radius: 2px;
     transition: background 0.15s, color 0.15s;
 }
 .modal-btn-x:hover {
