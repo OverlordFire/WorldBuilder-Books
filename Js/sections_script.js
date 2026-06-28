@@ -18,7 +18,7 @@ const sectionMap = {
   Locations:  "D-Locations",
   Objects:    "E-Objects"
 };
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://worldbuilder-b.onrender.com";
 const sectionItems = { Stories: [], Characters: [], Locations: [], Objects: [] };
 const sectionPage  = { Stories: 1,  Characters: 1,  Locations: 1,  Objects: 1  };
 const sectionView  = { Stories: "list", Characters: "list", Locations: "list", Objects: "list" };
